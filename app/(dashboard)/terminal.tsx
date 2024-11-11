@@ -12,10 +12,11 @@ export function Terminal() {
 		'# Get started with:',
 		'git clone https://github.com/farajabien/next-saas-starter',
 		'cd next-saas-starter',
+		'',
+		'# Install dependencies',
 		'pnpm install',
 		'',
-		'# Setup environment and database',
-		'pnpm db:setup',
+		'# Initialize database',
 		'pnpm db:migrate',
 		'pnpm db:seed',
 		'',
@@ -26,8 +27,11 @@ export function Terminal() {
 		'# Start the app',
 		'pnpm dev',
 		'',
-		'# Paystack & M-Pesa Integration (Coming Soon)',
-		'stripe listen --forward-to localhost:3000/api/paystack/webhook',
+		'# Optional: Setup Stripe webhooks',
+		'stripe listen --forward-to localhost:3000/api/stripe/webhook',
+		'',
+		'# Paystack Integration (Coming Soon)',
+		'# Support for MPESA and local payments',
 	]
 
 	useEffect(() => {
