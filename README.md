@@ -1,126 +1,150 @@
-# Next.js SaaS Starter
+# Next.js SaaS Starter for African Markets
 
-This is a starter template for building a SaaS application using **Next.js** with support for authentication, Stripe integration for payments, and a dashboard for logged-in users.
+A production-ready template for building SaaS applications targeting the African market, built with Next.js and featuring comprehensive local payment integrations.
 
-**Demo: [https://next-saas-start.vercel.app/](https://next-saas-start.vercel.app/)**
+**Demo: [https://next-saas-starter-demo.vercel.app](https://next-saas-starter-demo.vercel.app)**
 
-<details>
-  <summary>Why did I make this?</summary>
-  
-  In 2020, I made a course called "React 2025" which showed how to build a SaaS application with Next.js, Stripe, and other tools.
+## 🚀 Coming Next Week
 
-Well, it's almost 2025 and React 19 has brought so many amazing new features I didn't predict! This repo is a demonstration of the latest React and Next.js patterns. These patterns can drastically simplify some common tasks in building your SaaS, like building forms, talking to your database, and more.
+- Paystack Integration for seamless local payments
+- MPESA Integration for mobile money
+- Multi-currency support for African markets
+- Local payment webhook handling
 
-For example, React now has built in hooks like `useActionState` to handle inline form errors and pending states. React Server Actions can replace a lot of boilerplate code needed to call an API Route from the client-side. And finally, the React `use` hook combined with Next.js makes it incredibly easy to build a powerful `useUser()` hook.
+## ✨ Features
 
-We're able to fetch the user from our Postgres database in the root layout, but _not_ await the `Promise`. Instead, we forward the `Promise` to a React context provider, where we can "unwrap" it and awaited the streamed in data. This means we can have the best of both worlds: easy code to fetch data from our database (e.g. `getUser()`) and a React hook we can use in Client Components (e.g. `useUser()`).
+### Authentication & Users
 
-Fun fact: the majority of the UI for this application was built with [v0](https://v0.dev) 🤯 [More details here](https://x.com/leeerob/status/1835777934361084316) if you want to learn about this repo.
+- Email & social login authentication
+- Role-based access control
+- Team management
+- User profile management
 
-</details>
+### Subscription & Payments
 
-## Features
+- Paystack integration for local payments
+- Multiple subscription plans
+- Usage-based billing
+- Payment history & invoicing
+- Multi-currency support
+- MPESA integration (coming soon)
 
-- Marketing landing page (`/`) with animated Terminal element
-- Pricing page (`/pricing`) which connects to Stripe Checkout
-- Dashboard pages with CRUD operations on users/teams
-- Basic RBAC with Owner and Member roles
-- Subscription management with Stripe Customer Portal
-- Email/password authentication with JWTs stored to cookies
-- Global middleware to protect logged-in routes
-- Local middleware to protect Server Actions or validate Zod schemas
-- Activity logging system for any user events
+### Developer Experience
 
-## Tech Stack
+- TypeScript for type safety
+- API documentation
+- Database migrations
+- Environment management
+- Pre-configured testing setup
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [Postgres](https://www.postgresql.org/)
-- **ORM**: [Drizzle](https://orm.drizzle.team/)
-- **Payments**: [Stripe](https://stripe.com/)
-- **UI Library**: [shadcn/ui](https://ui.shadcn.com/)
+### UI/UX
 
-## Getting Started
+- Responsive dashboard
+- Dark/light mode support
+- Loading states
+- Error handling
+- Toast notifications
+
+## 🛠 Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/)
+- **Database**: [Supabase](https://supabase.com/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Payments**: [Paystack](https://paystack.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
+## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/leerob/next-saas-starter
+# Clone the repository
+git clone https://github.com/farajabien/next-saas-starter
 cd next-saas-starter
+
+# Install dependencies
 pnpm install
-```
 
-## Running Locally
+# Setup environment variables
+cp .env.example .env
 
-Use the included setup script to create your `.env` file:
-
-```bash
+# Setup database
 pnpm db:setup
-```
-
-Then, run the database migrations and seed the database with a default user and team:
-
-```bash
 pnpm db:migrate
 pnpm db:seed
-```
 
-This will create the following user and team:
-
-- User: `test@test.com`
-- Password: `admin123`
-
-You can, of course, create new users as well through `/sign-up`.
-
-Finally, run the Next.js development server:
-
-```bash
+# Start development server
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
+## 💳 Testing Payments
 
-Optionally, you can listen for Stripe webhooks locally through their CLI to handle subscription change events:
+### Test Cards for Paystack (Coming Soon)
+
+- Card Number: `4084 0840 8408 4081`
+- Expiration: Any future date
+- CVV: Any 3 digits
+
+### MPESA Testing (Coming Soon)
+
+Documentation for MPESA testing will be available with the upcoming integration.
+
+## 🌍 African Market Focus
+
+This template is specifically designed for businesses targeting the African market with features like:
+
+- Local payment method integrations (Paystack, MPESA)
+- Multi-currency support for African currencies
+- Mobile-first design approach
+- Optimized for lower bandwidth conditions
+- Local regulatory compliance considerations
+
+## 📚 Documentation
+
+Comprehensive documentation is available in the `/docs` directory:
+
+- [Setup Guide](./docs/setup.md)
+- [Payment Integration](./docs/payments.md)
+- [Deployment Guide](./docs/deployment.md)
+- [Contributing Guide](./docs/contributing.md)
+
+## 🚀 Deployment
+
+### Environment Variables
 
 ```bash
-stripe listen --forward-to localhost:3000/api/stripe/webhook
+# Required variables
+DATABASE_URL=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
+
+# Payment integration (Coming Soon)
+PAYSTACK_SECRET_KEY=
+PAYSTACK_PUBLIC_KEY=
+MPESA_CONSUMER_KEY=
+MPESA_CONSUMER_SECRET=
 ```
 
-## Testing Payments
+### Deploy on Vercel
 
-To test Stripe payments, use the following test card details:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com).
 
-- Card Number: `4242 4242 4242 4242`
-- Expiration: Any future date
-- CVC: Any 3-digit number
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/farajabien/next-saas-starter)
 
-## Going to Production
+## 📝 License
 
-When you're ready to deploy your SaaS application to production, follow these steps:
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-### Set up a production Stripe webhook
+## ⭐️ Support
 
-1. Go to the Stripe Dashboard and create a new webhook for your production environment.
-2. Set the endpoint URL to your production API route (e.g., `https://yourdomain.com/api/stripe/webhook`).
-3. Select the events you want to listen for (e.g., `checkout.session.completed`, `customer.subscription.updated`).
+If you find this template helpful, please consider giving it a star! Also, don't forget to follow me on:
 
-### Deploy to Vercel
+- Twitter: [@farajabien](https://twitter.com/farajabien)
+- GitHub: [@farajabien](https://github.com/farajabien)
 
-1. Push your code to a GitHub repository.
-2. Connect your repository to Vercel and deploy it.
-3. Follow the Vercel deployment process, which will guide you through setting up your project.
+## 👥 Contributing
 
-### Add environment variables
+Contributions are welcome! Please read our [contributing guide](CONTRIBUTING.md) to learn about our development process and how to propose bugfixes and improvements.
 
-In your Vercel project settings (or during deployment), add all the necessary environment variables. Make sure to update the values for the production environment, including:
+## 🙏 Acknowledgments
 
-1. `BASE_URL`: Set this to your production domain.
-2. `STRIPE_SECRET_KEY`: Use your Stripe secret key for the production environment.
-3. `STRIPE_WEBHOOK_SECRET`: Use the webhook secret from the production webhook you created in step 1.
-4. `POSTGRES_URL`: Set this to your production database URL.
-5. `AUTH_SECRET`: Set this to a random string. `openssl rand -base64 32` will generate one.
-
-## Other Templates
-
-While this template is intentionally minimal and to be used as a learning resource, there are other paid versions in the community which are more full-featured:
-
-- https://achromatic.dev
-- https://shipfa.st
-- https://makerkit.dev
+This template builds upon the excellent work of many open source projects and was inspired by various SaaS platforms in the African market.
