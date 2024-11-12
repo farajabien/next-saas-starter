@@ -1,11 +1,5 @@
 import { Button } from '@/components/ui/button'
-import {
-	ArrowRight,
-	CreditCard,
-	Database,
-	Calendar,
-	Smartphone,
-} from 'lucide-react'
+import { ArrowRight, Database, Calendar, Smartphone } from 'lucide-react'
 import { Terminal } from './terminal'
 import { Badge } from '@/components/ui/badge'
 
@@ -17,7 +11,7 @@ export default function HomePage() {
 					<div className='lg:grid lg:grid-cols-12 lg:gap-8'>
 						<div className='sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left'>
 							<div className='flex items-center gap-2 mb-4 lg:justify-start justify-center'>
-								<Badge className='bg-green-100 text-green-700 hover:bg-orange-100'>
+								<Badge className='bg-green-100 text-green-700 hover:bg-green-100'>
 									Coming Next Week
 								</Badge>
 								<Badge
@@ -105,7 +99,7 @@ export default function HomePage() {
 									Complete payment solution for the African market with MPESA
 									and local currency support.
 									<span className='absolute -top-3 -right-3'>
-										<Badge className='bg-orange-100 text-orange-700 text-xs'>
+										<Badge className='bg-green-100 text-green-700 text-xs'>
 											Coming Soon
 										</Badge>
 									</span>
@@ -159,7 +153,7 @@ export default function HomePage() {
 						</p>
 						<Button
 							variant='outline'
-							className='text-white border-white hover:bg-orange-400'
+							className='text-black border-white hover:bg-orange-400'
 							asChild>
 							<a href='https://wa.me/254793643308' target='_blank'>
 								Join Waitlist
