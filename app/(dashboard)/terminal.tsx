@@ -56,7 +56,7 @@ export function Terminal() {
 	return (
 		<div className='relative'>
 			<div className='absolute -top-3 right-0'>
-				<Badge className='bg-orange-100 text-orange-700'>
+				<Badge className='bg-green-100 text-green-700'>
 					Local Payments Coming Soon
 				</Badge>
 			</div>
