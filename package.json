@@ -2,9 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build && npx tsx lib/db/migrate.ts",
-    "vercel-build": "NODE_ENV=production npx tsx lib/db/migrate.ts && next build",
-        "start": "next start",
+    "build": "next build",
+    "start": "next start",
     "db:setup": "npx tsx lib/db/setup.ts",
     "db:seed": "npx tsx lib/db/seed.ts",
     "db:generate": "drizzle-kit generate",
