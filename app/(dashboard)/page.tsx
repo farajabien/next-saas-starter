@@ -17,12 +17,12 @@ export default function HomePage() {
 					<div className='lg:grid lg:grid-cols-12 lg:gap-8'>
 						<div className='sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left'>
 							<div className='flex items-center gap-2 mb-4 lg:justify-start justify-center'>
-								<Badge className='bg-orange-100 text-orange-700 hover:bg-orange-100'>
+								<Badge className='bg-green-100 text-green-700 hover:bg-orange-100'>
 									Coming Next Week
 								</Badge>
 								<Badge
 									variant='outline'
-									className='border-orange-200 text-orange-700'>
+									className='border-green-200 text-green-700'>
 									Paystack + MPESA Integration
 								</Badge>
 							</div>
@@ -150,7 +150,7 @@ export default function HomePage() {
 			</section>
 
 			{/* Coming Soon Banner */}
-			<section className='bg-orange-500 py-4'>
+			<section className='bg-green-500 py-4'>
 				<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='flex items-center justify-center gap-4 text-white'>
 						<Calendar className='h-5 w-5' />
