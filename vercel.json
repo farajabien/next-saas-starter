@@ -1,0 +1,7 @@
+{
+    "build": {
+      "env": {
+        "POSTGRES_URL": "postgres://postgres:postgres@localhost:54322/postgres"
+      }
+    }
+  }

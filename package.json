@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "next build && npx tsx lib/db/migrate.ts",
+    "vercel-build": "npx tsx lib/db/migrate.ts && next build",
     "start": "next start",
     "db:setup": "npx tsx lib/db/setup.ts",
     "db:seed": "npx tsx lib/db/seed.ts",
